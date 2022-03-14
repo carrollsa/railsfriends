@@ -1,9 +1,18 @@
 <tr>
-  <td><%= friend.first_name %></td>
-  <td><%= friend.last_name %></td>
+  <td>
+    <%= link_to friend.first_name + ' ' + friend.last_name, friend, class: "text-decoration-none" %>
+  </td>
   <td><%= friend.email %></td>
   <td><%= friend.phone %></td>
   <td><%= friend.twitter %></td>
   <td><%= friend.user_id %></td>
-  <td class="text-decoration-none"><%= link_to "Show this friend", friend %></td>
+  <td>
+    <%= 
+      button_to 'Delete', 
+      friend, 
+      method: :delete, 
+      data: { confirm: 'Are you sure?' }, 
+      class: 'btn btn-sm btn-outline-danger' 
+      %>
+  </td>
 </tr>

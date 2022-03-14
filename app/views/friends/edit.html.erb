@@ -6,5 +6,7 @@
 
 <div>
   <%= link_to "Show this friend", @friend, class: "btn btn-secondary" %> |
-  <%= link_to "Back to friends", friends_path, class: "btn btn-dark" %>
+  <%= link_to "Back to friends", friends_path, class: "btn btn-dark" %>  
+  <!-- Figure out how to add confirmation. Older guide has link_to but only works with button_to, which shows no confirmation -->
+  <%= button_to 'Delete', @friend, method: :delete, data: { confirm: 'Are you sure?' }, class: 'mt-4 btn btn-danger' %>
 </div>
