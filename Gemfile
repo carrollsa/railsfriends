@@ -5,7 +5,7 @@ ruby "3.0.3"
 
 gem "rails", "~> 7.0.2", ">= 7.0.2.3"
 gem "sprockets-rails"
-gem "sqlite3", "~> 1.4"
+
 gem "puma", "~> 5.0"
 gem "importmap-rails"
 gem "turbo-rails"
@@ -30,12 +30,17 @@ end
 
 group :development do
   gem "web-console"
-
+  gem "sqlite3", "~> 1.4"
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
+end
+
+group :production do
+  gem 'pg', '~> 1.3', '>= 1.3.4'
+  #gem 'rails_12factor', '0.0.2'
 end
 
 group :test do
